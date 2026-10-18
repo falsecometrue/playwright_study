@@ -1,0 +1,4 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>おすすめ動画のAPIモック</title><link rel="stylesheet" href="/assets/theme.css"></head><body><header class="site-header"><a class="brand" href="/">TubeLab</a><span class="header-note">YouTubeをテーマにしたPlaywright練習サイト</span></header><main class="content"><p class="eyebrow">PLAYWRIGHT TRAINING / VIDEO PLATFORM</p><h1>おすすめ動画のAPIモック</h1><button id="load">おすすめ動画を読み込む</button><ul id="videos"></ul><p role="alert" id="error"></p><script>
+load.onclick=async()=>{error.textContent='';videos.replaceChildren();try{const response=await fetch('/api/recommendations');if(!response.ok)throw new Error();const data=await response.json();data.videos.forEach(p=>{const li=document.createElement('li');li.textContent=p.name+'：'+p.views+'回視聴';videos.append(li);});}catch{error.textContent='おすすめ動画を読み込めませんでした';}};
+</script></main></body></html>

@@ -1,0 +1,4 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>動画サイトの表示テーマと永続化</title><link rel="stylesheet" href="/assets/theme.css"></head><body><header class="site-header"><a class="brand" href="/">TubeLab</a><span class="header-note">YouTubeをテーマにしたPlaywright練習サイト</span></header><main class="content"><p class="eyebrow">PLAYWRIGHT TRAINING / VIDEO PLATFORM</p><h1>動画サイトの表示テーマと永続化</h1><label>表示テーマ<select id="theme"><option value="light">ライト</option><option value="dark">ダーク</option></select></label><p role="status" id="result"></p><script>
+const render=()=>{document.body.dataset.theme=theme.value;result.textContent='現在のテーマ：'+(theme.value==='dark'?'ダーク':'ライト');};theme.value=localStorage.getItem('theme')||'light';render();theme.onchange=()=>{localStorage.setItem('theme',theme.value);render();};
+</script></main></body></html>

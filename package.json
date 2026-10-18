@@ -1,0 +1,19 @@
+{
+  "name": "playwright-training",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/server.mjs",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report reports/exercises/html",
+    "check:training": "node scripts/verify.mjs",
+    "test:solutions": "playwright test --config solutions.config.ts",
+    "report:solutions": "playwright show-report reports/solutions/html"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0"
+  }
+}

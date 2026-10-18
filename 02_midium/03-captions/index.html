@@ -1,0 +1,4 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>字幕CSVのアップロードとダウンロード</title><link rel="stylesheet" href="/assets/theme.css"></head><body><header class="site-header"><a class="brand" href="/">TubeLab</a><span class="header-note">YouTubeをテーマにしたPlaywright練習サイト</span></header><main class="content"><p class="eyebrow">PLAYWRIGHT TRAINING / VIDEO PLATFORM</p><h1>字幕CSVのアップロードとダウンロード</h1><label>字幕CSV<input id="upload" type="file" accept=".csv"></label><p role="status" id="result"></p><a href="/api/export" download="captions.csv">字幕をダウンロード</a><script>
+upload.onchange=async()=>{const file=upload.files[0];if(!file)return;result.textContent=file.name.endsWith('.csv')?file.name+'：'+(await file.text()).trim().split(/\r?\n/).length+'行':'字幕CSVを選択してください';};
+</script></main></body></html>

@@ -1,0 +1,5 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>検索候補の応答競合</title><link rel="stylesheet" href="/assets/theme.css"></head><body><header class="site-header"><a class="brand" href="/">TubeLab</a><span class="header-note">YouTubeをテーマにしたPlaywright練習サイト</span></header><main class="content"><p class="eyebrow">PLAYWRIGHT TRAINING / VIDEO PLATFORM</p><h1>検索候補の応答競合</h1><label>動画検索<input id="query"></label><p role="status" id="status"></p><ul id="results"></ul><script>
+const status = document.querySelector("#status");
+let latest=0;query.oninput=async()=>{const seq=++latest;status.textContent='検索中';const r=await fetch('/api/search?q='+encodeURIComponent(query.value));const data=await r.json();if(seq!==latest)return;results.replaceChildren();data.items.forEach(x=>{const li=document.createElement('li');li.textContent=x;results.append(li);});status.textContent=data.items.length+'件';};
+</script></main></body></html>

@@ -1,0 +1,4 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>チャンネル画面と概要への遷移</title><link rel="stylesheet" href="/assets/theme.css"></head><body><header class="site-header"><a class="brand" href="/">TubeLab</a><span class="header-note">YouTubeをテーマにしたPlaywright練習サイト</span></header><main class="content"><p class="eyebrow">PLAYWRIGHT TRAINING / VIDEO PLATFORM</p><h1>チャンネル画面と概要への遷移</h1><h2>ホーム</h2><a href="?view=about">チャンネル概要</a><p id="content"></p><script>
+if(new URLSearchParams(location.search).get('view')==='about'){document.title='チャンネル概要';document.querySelector('h2').textContent='チャンネル概要';content.textContent='テスト学習チャンネルです';}
+</script></main></body></html>
